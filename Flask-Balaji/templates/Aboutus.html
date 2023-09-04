@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>About Us</title>
+    <style>
+        .card-container {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            text-align: center;
+        }
+
+        .card {
+            width: 100%;
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            margin-bottom: 20px;
+            transition: transform 0.2s;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .card img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 10px 10px 0 0;
+        }
+        .card {
+          background-color: aqua;
+          background-size: 20% 20%;
+  
+    display: flex;
+    flex-direction: column;
+    align-items: center; 
+}
+
+
+        .card-content {
+            padding: 20px;
+            text-align: center;
+        }
+
+        .card h3 {
+            margin: 0;
+            font-size: 18px;
+        }
+
+        .card p {
+            margin: 5px 0;
+            font-size: 14px;
+        }
+
+        .card:hover {
+            transform: scale(1.05);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+            cursor: pointer;
+        }
+
+    </style>
+</head>
+
+<body>
+
+<div class="container">
+    <h1 class="text-center">Our Team</h1>
+
+    <div class="card-container">
+
+        <div class="card">
+            <img style="width: 250px;height: 250px;" src="static/images/hemanth.jpeg" alt="Person 2">
+
+
+            <div class="card-content">
+                <h3>Hemanth kumar</h3>
+                <p>Position:Report writter</p>
+                <p>Email: geddavalasahemanthkumar@gmail.com.com</p>
+            </div>
+        </div><br>
+
+        <div class="card">
+            <img style="width: 250px;height: 250px;" src="static/images/balaji.jpg" alt="Person 2">
+            <div class="card-content">
+                <h3>Balaji</h3>
+                <p>Position:Frontend and backend</p>
+                <p>Email: annapareddybalaji78@gmail.com</p>
+            </div>
+        </div>
+
+        <div class="card">
+            <img style="width: 250px;height: 250px;" src="static/images/reddy.jpg" alt="Person 2">
+
+            <div class="card-content">
+                <h3>srinivasreddy</h3>
+                <p>Position:Frontend and backend</p>
+                <p>Email: srinivasreddy0369@gmail.com</p>
+            </div>
+        </div>
+
+        <div class="card">
+            <img style="width: 250px;height: 250px;" src="static/images/maruthi.jpg" alt="Person 2">
+
+            <div class="card-content">
+                <h3>Maruthi naidu</h3>
+                <p>Position:Tester</p>
+                <p>Email: bommisettymaruthi99@gmail.com</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    document.querySelectorAll('.card').forEach((card, index) => {
+        card.addEventListener('click', () => {
+            alert(`Clicked on card ${index + 1}`);
+        });
+    });
+</script>
+</body>
+</html>

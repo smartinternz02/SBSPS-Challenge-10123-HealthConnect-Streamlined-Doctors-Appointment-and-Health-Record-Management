@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Medication List</title>
+    <script>
+   
+        var medications = [];
+
+        function addMedication() {
+            var medicationName = document.getElementById("medicationName").value;
+            var dosage = document.getElementById("dosage").value;
+            var frequency = document.getElementById("frequency").value;
+            var startDate = document.getElementById("startDate").value;
+            var endDate = document.getElementById("endDate").value;
+
+            if (medicationName === "" || dosage === "" || frequency === "" || startDate === "") {
+                alert("Please fill in all required fields.");
+                return;
+            }
+
+            var medication = {
+                name: medicationName,
+                dosage: dosage,
+                frequency: frequency,
+                startDate: startDate,
+                endDate: endDate
+            };
+
+            medications.push(medication);
+
+
+            var medicationList = document.getElementById("medicationList");
+            var listItem = document.createElement("li");
+            listItem.textContent = medicationName;
+            medicationList.appendChild(listItem);
+
+ 
+            document.getElementById("medicationName").value = "";
+            document.getElementById("dosage").value = "";
+            document.getElementById("frequency").value = "";
+            document.getElementById("startDate").value = "";
+            document.getElementById("endDate").value = "";
+        }
+    </script>
+    <style>
+        
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            margin: 0;
+            padding: 20px;
+        }
+
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+
+        form {
+            background-color: aquamarine;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+        
+        }
+
+        label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+
+        input[type="text"],
+        input[type="date"] 
+        {
+            width: 40%;
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 3px;
+            font-size: 16px;
+        } 
+
+        button{
+    background-color: #4CAF50; 
+    border: none; 
+    color: white; 
+    padding: 10px 20px; 
+    text-align: center; 
+    text-decoration: none; 
+    display: inline-block; 
+    font-size: 16px; 
+    border-radius: 5px; 
+    cursor: pointer; 
+  }
+  button:hover {
+    background-color: #007BFF; 
+  }
+
+    
+    </style>
+</head>
+<body>
+    
+    <h1>Medication List</h1>
+    
+    <form action="{{url_for('medi')}}" method="post" name="form" id="form">
+        
+        <label for="medicationName" >Medication Name:</label>
+        <input type="text" id="medicationName" name="name"  onclick="myFunction()"><br><br>
+
+        <label for="dosage">Dosage:</label>
+        <input type="text" id="dosage" name="dosage" onclick="myFunction()" required><br><br>
+
+        <label for="frequency">Frequency:</label>
+        <input type="text" id="frequency" name="frequency" onclick="myFunction()" required><br><br>
+
+        <label for="startDate">Start Date:</label>
+        <input type="date" id="startDate" name="sdate" onclick="myFunction()" required><br><br>
+
+        <label for="endDate">End Date (if applicable):</label>
+        <input type="date" id="endDate" name="edate" onclick="myFunction()"><br><br>
+
+        <button type="submit">Add Medication</button>
+    </form>
+</body>
+</html>

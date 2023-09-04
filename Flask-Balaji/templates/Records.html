@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Health Records System</title>
+ 
+         <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f5f5f5;
+        }
+        
+        header {
+            background-color: #007bff;
+            color: #fff;
+            text-align: center;
+            padding: 1rem 0;
+        }
+        
+        section {
+            background-color: #fff;
+            border: 1px solid #ddd;
+            padding: 1rem;
+            margin: 1rem;
+        }
+        
+        h2 {
+            color: #333;
+        }
+        
+        label {
+            display: block;
+            font-weight: bold;
+            margin-bottom: 0.5rem;
+        }
+        
+        input, textarea {
+            width: 100%;
+            padding: 0.5rem;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        
+        ul {
+            list-style: none;
+            padding: 0;
+        }
+        
+        li {
+            margin-bottom: 0.5rem;
+        }
+        
+        footer {
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            padding: 0.5rem 0;
+        }
+    </style>
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Health Records System</h1>
+        
+    </header>
+    
+    <section id="patient-info">
+        <h2>Patient Information</h2>
+        <div class="patient-details">
+            <label for="patient-name">Name:</label>
+            <input type="text" id="patient-name" name="patient-name">
+        </div>
+        <div class="patient-details">
+            <label for="patient-age">Age:</label>
+            <input type="number" id="patient-age" name="patient-age">
+        </div>
+
+    </section>
+    
+    <section id="medical-history">
+        <h2>Medical History</h2>
+        <textarea id="medical-history-text" name="medical-history-text" rows="4" cols="50" placeholder="Enter medical history"></textarea>
+    </section>
+    
+    <section id="prescriptions">
+        <h2>Prescriptions</h2>
+        <ul>
+            <li>Prescription 1: Medication A - Dosage</li>
+            <li>Prescription 2: Medication B - Dosage</li>
+            <!-- Add more prescription items as needed -->
+        </ul>
+    </section>
+    
+    <section id="appointments">
+        <h2>Appointments</h2>
+        <ul>
+            <li>Date: Time - Doctor's Name</li>
+            <li>Date: Time - Doctor's Name</li>
+            <!-- Add more appointment items as needed -->
+        </ul>
+    </section>
+    
+    <footer>
+        <p>&copy; 2023 Health Records System. All rights reserved.</p>
+    </footer>
+</body>
+</html>

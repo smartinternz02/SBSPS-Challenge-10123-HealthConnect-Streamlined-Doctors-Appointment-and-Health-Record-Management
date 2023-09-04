@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+  center{
+    font-style: oblique;
+  }
+  .navbar {
+    overflow: hidden;
+    background-color: darkblue;
+  }
+  body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+    
+}
+
+.container {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: rgb(185, 212, 30);
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    margin-right: 100px;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+label {
+    margin-bottom: 8px;
+    font-weight: bold;
+}
+
+input[type="text"],
+input[type="date"],
+select {
+    padding: 8px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+}
+
+input[type="submit"] {
+    background-color: #007bff;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+input[type="submit"]:hover {
+    background-color: orange;
+}
+
+  .navbar a {
+    float: left;
+    font-size: 16px;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+  }
+  header {
+    background-color:whitesmoke;
+    background-size: cover;
+    color: black;
+    text-align: center;
+    padding: 40px 0;
+  }
+  .navbar a:hover {
+    background-color: lightpink;
+   
+   color: black;
+
+  }
+  .image-cards {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin-top: 20px;
+  }
+
+  .image-card {
+    flex: 1 1 calc(50% - 20px);
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    text-align: center;
+    margin: 10px;
+    transition: transform 0.3s;
+  }
+
+  .image-card:hover {
+    transform: scale(1.1);
+  }
+
+  .image-card img {
+    width: 20%;
+    max-height: 200px;
+    border-radius: 10px;
+  }
+header img{
+  width: 700px;
+   height: 200px;
+  border-radius: 20px;
+}
+
+.img{
+  position: absolute;
+}
+.my-button{
+    background-color: #4CAF50; 
+    border: none; 
+    color: white; 
+    padding: 10px 20px; 
+    text-align: center; 
+    text-decoration: none; 
+    display: inline-block; 
+    font-size: 16px; 
+    border-radius: 5px; 
+    cursor: pointer; 
+  }
+  .my-button:hover {
+    background-color:orangered; 
+  }
+
+</style>
+
+
+</head>
+<body>
+  <h1>Available services</h1>
+<div class="navbar">
+  
+  <a href="{{url_for('main')}}">Home</a>
+  
+  <a href="{{url_for('about')}}">About</a>
+  <a href= "{{url_for('service')}}">Service</a>
+  <a href="{{url_for('myprofile')}}">Myprofile</a>
+  <a href="{{url_for('feedback')}}">Feedback</a>
+  <a href="{{url_for('medicine')}}">MedicineInfo</a>
+  
+</div>
+<img src="https://clipground.com/images/american-red-cross-logo-clipart-3.jpg" style="width: 100px;margin-left: 150px;margin-top:100px;position: absolute;">
+<header>
+ 
+        <img src="https://img.freepik.com/free-vector/gradient-medical-twitch-banner_23-2149169419.jpg?w=1380&t=st=1693464349~exp=1693464949~hmac=8680ec5a882016e626d2956b969d00ffd02a16391478a74181f3ee3c41966fec" alt="Doctor">
+  </header>
+<body>
+  <img class="img" src="https://i.ytimg.com/vi/9Crw7LkaMIc/maxresdefault.jpg"  style="width: 50%; height: 100%;">
+
+  <div class="container">
+      <h1>Book an Appointment</h1>
+      <form method="post" action="{{url_for('register')}}">
+          
+          <label for="patient_name">Patient Name:</label>
+          <input type="text" id="patient_name" name="name" required><br>
+          
+          <label for="email">Email:</label>
+          <input type="email" id="email" name="email" required><br>
+          
+          <label>Gender:<select name="gender">
+          <option>Male</option>
+          <option>Female</option>
+          <option>Others</option>
+        </select>
+      </label>
+
+          
+          <label for="mobile_number">Mobile Number:</label>
+          <input type="tel" id="mobile_number" name="mobile" required><br>
+          
+          <label for="appointment_date">Appointment Date:</label>
+          <input type="date" id="appointment_date" name="date" required><br>
+          
+          <label for="doctor">Doctor:</label>
+          <select id="doctor" name="doctor" required>
+              <option value="doctor1">Srinivas reddy(Dermitology)</option>
+              <option value="doctor2">siva reddy(Nuerology)</option>
+          Location:
+          <input type="text" id="Location" name="location" required><br>
+          <label >Hospital:</label>
+          <input type="text" id="Hospital" name="hospital" required><br>
+          
+              
+          </select><br>
+          
+          <input type="submit" value="Book Appointment"></form></div>
+          <h1>Available Now</h1>
+            <div class="image-cards">
+              <div class="image-card">
+                <img src="https://tse2.mm.bing.net/th?id=OIP.WiQph2AZtii_NmU9p-F2wQHaEF&pid=Api&P=0&h=180" alt="Image 1"><br>
+                
+                <a href="{{url_for('schedule')}}" class="my-button"> Nuerology</a>
+              </div>
+              <div class="image-card">
+                <img src="https://www.abeergroup.com/ksa/images/services/Description/Dermatology_40.jpg" alt="Image 2"><br>
+                <div class="image-card">
+                <a href="{{url_for('schedule')}}" class="my-button"> Dermitology</a>
+              </div>
+              </div>
+            </div>
+            
+          
+            
+            <div class="image-cards">
+              <div class="image-card">
+                <img src="https://drergatoudes.com/wp-content/uploads/2020/12/Cardiologists-1577191054262.jpg" alt="Image 3"><br>
+                <a href="{{url_for('schedule')}}" class="my-button"> Cardiologist</a>
+              </div>
+              <div class="image-card">
+                <img src="https://www.colgate.com/content/dam/cp-sites/oral-care/oral-care-center/global/article/gscp/asia/smiling-dentist-treating-toothache-of-kid-at-hospital.jpg" alt="Image 4"><br>
+                <a href="{{url_for('schedule')}}" class="my-button"> Dentist</a>
+              </div>
+            </div>
+             
+            
+      </body>
+</html>
+

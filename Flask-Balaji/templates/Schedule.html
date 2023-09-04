@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Health Streamline Video Call</title>
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+    }
+  
+    .container {
+      text-align: center;
+      margin-top: 50px;
+    }
+  
+    #startCallButton {
+      padding: 10px 20px;
+      background-color: #007bff;
+      color: #fff;
+      border: none;
+      cursor: pointer;
+    }
+  
+    #videoContainer {
+      margin-top: 20px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Welcome to Health Streamline Video Call</h1>
+    <button id="startCallButton">Start Video Call</button>
+    <div id="videoContainer">
+      
+    </div>
+  </div>
+  <script>
+    const startCallButton = document.getElementById('startCallButton');
+    const videoContainer = document.getElementById('videoContainer');
+    
+    startCallButton.addEventListener('click', () => {
+      // Replace this URL with the actual URL of your video conferencing service
+      const videoConferenceUrl = 'https://your-video-conferencing-service.com/your-meeting-room';
+
+      // Create an iframe to embed the video conferencing service
+      const iframe = document.createElement('iframe');
+      iframe.src = videoConferenceUrl;
+      iframe.width = '800';
+      iframe.height = '600';
+      iframe.frameBorder = '0';
+      
+      // Clear any previous content and add the iframe
+      videoContainer.innerHTML = '';
+      videoContainer.appendChild(iframe);
+    });
+  </script>
+</body>
+</html>
